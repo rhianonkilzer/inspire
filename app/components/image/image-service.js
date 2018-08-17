@@ -1,5 +1,5 @@
 const url = '//bcw-getter.herokuapp.com/?url=';
-const url2 = 'http://www.splashbase.co/api/v1/images/random'
+const url2 = 'http://www.splashbase.co/api/v1/images/search?query=mountains'
 const apiUrl = url + encodeURIComponent(url2);
 
 // @ts-ignore
@@ -13,7 +13,7 @@ export default class ImageService {
 	getImage(callWhenDone) {
 		console.log("Looking for a good pic")
 		imgApi().then(res => {
-			callWhenDone(res.data)
+			callWhenDone(res.data.images[Math.floor(Math.random()*res.data.images.length)])
 		})
 	}
 }

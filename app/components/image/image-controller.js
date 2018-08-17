@@ -1,10 +1,12 @@
 import ImageService from "./image-service.js";
 
 
-
-
 let imgser = new ImageService
-const app = document.getElementById("app")
+
+function draw(image){
+console.log(image)
+    document.body.style.backgroundImage = `url('${image.large_url}')`
+}
 
 
 export default class ImageController {
@@ -13,10 +15,8 @@ export default class ImageController {
     }
     getImage() {
         imgser.getImage(image => {
-            console.log(image);
-
+            draw(image)
             //how to set background of element in js
         })
     }
 }
-

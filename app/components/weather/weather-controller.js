@@ -4,13 +4,13 @@ var weatherService = new WeatherService()
 
 function draw(weather) {
 	let template = `
-	<div class="weather">
+	<div class="text-center">
 	<p>${weather.coord}</p>
 	<p>${weather.weather}</p>
 	<p>${weather.wind}</p>
 	</div>
 	`
-	
+
 }
 export default class WeatherController {
 
