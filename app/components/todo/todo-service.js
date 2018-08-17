@@ -1,4 +1,5 @@
-
+import NewTodo from "../../models/newtodo.js"
+import Todo from "../../models/todo.js"
 
 // @ts-ignore
 const todoApi = axios.create({
@@ -14,21 +15,28 @@ function logError(e) {
 let todoList = []
 
 export default class TodoService {
+	updateTodo(todoId) {
+// i need to change this to dosomething
+	}
 
 	getTodos(draw) {
 		console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-
+				let todos = res.data.data.map(rawTodo => {
+					return new Todo(rawTodo)
+				})
+				draw(todos)
 			})
 			.catch(logError)
 	}
 
-	addTodo(todo) {
-		// WHAT IS THIS FOR???
-		todoApi.post('', todo)
-			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-
+	addTodo(formData, getTodosFromController) {
+		let newTodo = new NewTodo(formData)
+		todoApi.post('', newTodo)
+			.then(res => { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
+				getTodosFromController()
+				
 			})
 			.catch(logError)
 	}
@@ -37,7 +45,7 @@ export default class TodoService {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
 
-		var todo = {} ///MODIFY THIS LINE
+		let todo = {} ///MODIFY THIS LINE
 
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
@@ -47,9 +55,15 @@ export default class TodoService {
 			.catch(logError)
 	}
 
-	removeTodo() {
+	deleteTodo(todoId, draw) {
 		// Umm this one is on you to write.... The method is a DELETE
 
+		todoApi.delete(todoId, draw)
+			.then(res => {
+				this.getTodos(draw)
+			})
+
 	}
+
 
 }

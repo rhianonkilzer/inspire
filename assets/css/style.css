@@ -3,19 +3,16 @@ body{
     background-size: cover;
 }
 
-.author{
-   
-    color: rgb(196, 196, 196);
-    border-radius: 4px;
-    width: 20%;
-    font-family: 'Caveat', cursive;
-    /* text-shadow: 2px 2px #00000080; */
+
+
+p{
+    color: white;
+    text-shadow: 3px 3px 6px black;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 23px;
 }
 
-.desc{
-   
-    color: rgb(209, 206, 206);  
-    border-radius: 5px;
-    font-family: 'Shadows Into Light', cursive;
-    /* text-shadow: 2px 2px #000000; */
+.todos{
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
 }

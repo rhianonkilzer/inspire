@@ -6,7 +6,7 @@ function draw(weather) {
 	console.log("weather", weather)
 	let tempf = (weather.main.temp*9/5-459.67).toFixed(2)
 	let template = `
-	<div class="text-center">
+	<div class="text-center weather">
 	<p>lat: ${weather.coord.lat}</p>
 	<p>${tempf}</p>
 	<p>${weather.wind.speed}</p>

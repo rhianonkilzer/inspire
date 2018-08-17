@@ -22,10 +22,11 @@
 		</div>
 	</div>
 	<div class="row">
+		<form class="col-4" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input type="text" name="description">
+		</form>
+		<p id="count"></p>
 		<div id="todo" class="col-4">
-			<form onsubmit="app.controllers.todoController.addTodo(event)">
-				<input type="text" name="description">
-			</form>
 			
 		</div>
 	</div>

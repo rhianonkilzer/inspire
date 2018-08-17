@@ -1,9 +1,9 @@
 
-
 export default class ToDo{
     constructor(data){
-        this.id = data._id
-        this.message = data.message
-        
+        this.description = data.description
+        this.user = data.user
+        this.completed = data.completed
+        this._id = data._id
     }
 }
