@@ -15,8 +15,14 @@ function logError(e) {
 let todoList = []
 
 export default class TodoService {
+
 	updateTodo(todoId) {
-// i need to change this to dosomething
+todoApi.updateTodo(todoId)
+.then(res=> {
+	this.getTodos()
+})
+
+// i need to change this to do something
 	}
 
 	getTodos(draw) {
@@ -50,13 +56,13 @@ export default class TodoService {
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
 			.then(function (res) {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				
 			})
 			.catch(logError)
 	}
 
 	deleteTodo(todoId, draw) {
-		// Umm this one is on you to write.... The method is a DELETE
+
 
 		todoApi.delete(todoId, draw)
 			.then(res => {

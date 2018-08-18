@@ -15,10 +15,10 @@ let template = ''
 for(let i = 0; i < todos.length; i++){
 	const todo = todos[i];
 	template += `
-	<div class="col-6 text-center todos"
-	<p>${todo.description}</p>
+	<div class="todos text-center">
 	<input type="checkbox" onclick="app.controllers.todoController.updateTodo('${todo._id}')">
-	<button onclick="app.controllers.todoController.deleteTodo('${todo._id}')">delete</button>
+	<p> ${todo.description}</p>
+	<button onclick="app.controllers.todoController.deleteTodo('${todo._id}')" class="w3-tiny">delete</button>
 	</div>
 	`
 
@@ -64,8 +64,8 @@ export default class TodoController {
 	todoService.deleteTodo(todoId, drawTodos)
 	}
 
-updateTodo(todoId){
-	todoService.updateTodo(todoId)
-}
+// updateTodo(todoId){
+// 	todoService.updateTodo(todoId)
+// }
 
 }

@@ -11,33 +11,40 @@
 
 <body id="body">
 	<div class="row">
-
-		<div id="weather" class="col-6">
-
-		</div>
-	</div>
-	<div class="row">
-		<div id="quote" class="col-3">
-			The Quote
-		</div>
-	</div>
-	<div class="row">
-		<form class="col-4" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-			<input type="text" name="description">
-		</form>
-		<p id="count"></p>
-		<div id="todo" class="col-4">
+		<div id="quote" class="col-12">
 			
 		</div>
 	</div>
 
+	
+	<hr>
+	
+	
+		<div class="row">
+	
+			<div id="weather" class="col-12">
+	
+			</div>
+		</div>
+<hr>
+	<div class="row todo-list text-center">
+		<form class="col-12" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+				<label for="description">To Do: </label>
+			<input type="text" name="description">
+		</form>
+<div class="col-12 todo-counter text-center">
+		<p id="count"></p>
+</div>
+		<div id="todo" class="col-12">
+				
+		</div>
+	</div>
 
 
 
-	<!--JS Libraries-->
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-	<!--Initialize App-->
-
 	<script type='module' src="app/main.js"></script>
 </body>
 
